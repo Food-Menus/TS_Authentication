@@ -127,9 +127,12 @@ handleForm("resetForm", async (data, message) => {
 });
 
 // Dashboard
+
 async function loadDashboard() {
-  const username = document.getElementById("username");
-  if (!username) return;
+  const profileUsername = document.getElementById("profileUsername");
+
+  // Run only on the Dashboard page
+  if (!profileUsername) return;
 
   const message = document.getElementById("dashboardMessage");
 
@@ -143,8 +146,8 @@ async function loadDashboard() {
 
     const user = result.data.user;
 
+    profileUsername.textContent = user.username;
     document.getElementById("username").textContent = user.username;
-    document.getElementById("profileUsername").textContent = user.username;
     document.getElementById("profileEmail").textContent = user.email;
     document.getElementById("profileRole").textContent = user.role;
 
@@ -153,6 +156,7 @@ async function loadDashboard() {
     window.location.href = "login.html";
   }
 }
+
 
 // Logout
 const logoutButton = document.getElementById("logoutBtn");
