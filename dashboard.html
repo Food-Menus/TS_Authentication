@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | TS Authentication</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <main class="container">
+    <section class="card dashboard">
+      <a class="brand" href="index.html">TS<span>.</span></a>
+      <p class="eyebrow">ACCOUNT DASHBOARD</p>
+      <h1>Welcome, <span id="username">...</span></h1>
+      <p class="muted">Your account information.</p>
+
+      <div class="profile">
+        <div class="profile-row">
+          <span>Username</span>
+          <strong id="profileUsername">-</strong>
+        </div>
+
+        <div class="profile-row">
+          <span>Email</span>
+          <strong id="profileEmail">-</strong>
+        </div>
+
+        <div class="profile-row">
+          <span>Role</span>
+          <strong id="profileRole">-</strong>
+        </div>
+      </div>
+
+      <div class="actions vertical">
+        <button id="changePasswordBtn" class="btn secondary full">
+          Change Password
+        </button>
+        <button id="logoutBtn" class="btn danger full">
+          Logout
+        </button>
+      </div>
+
+      <form id="changePasswordForm" class="hidden">
+        <h2>Change Password</h2>
+
+        <label for="currentPassword">Current Password</label>
+        <input id="currentPassword" type="password" required>
+
+        <label for="newPassword">New Password</label>
+        <input id="newPassword" type="password"
+          minlength="8" maxlength="128" required>
+
+        <button class="btn primary full" type="submit">
+          Update Password
+        </button>
+        <p id="message" class="message"></p>
+      </form>
+
+      <p id="dashboardMessage" class="message"></p>
+    </section>
+  </main>
+</body>
+</html>
