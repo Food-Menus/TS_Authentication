@@ -108,23 +108,64 @@ handleForm("forgotForm", async (data, message) => {
 });
 
 // Reset Password
-handleForm("resetForm", async (data, message) => {
-  const result = await apiRequest("resetPassword", {
-    email: data.get("email"),
-    otp: data.get("otp"),
-    newPassword: data.get("newPassword")
+
+// Forgot Password
+const forgotForm = document.getElementById("forgotForm");
+
+if (forgotForm) {
+  forgotForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const emailSection = document.getElementById("emailSection");
+    const otpSection = document.getElementById("otpSection");
+    const button = forgotForm.querySelector('button[type="submit"]');
+    const message = document.getElementById("message");
+
+    setLoading(button, true);
+
+    try {
+      const result = await apiRequest("forgotPassword", { email });
+
+      if (!result.success) {
+        throw new Error(result.message);
+      }
+
+      emailSection.classList.add("hidden");
+      otpSection.classList.remove("hidden");
+
+      showMessage(message, result.message, "success");
+
+    } catch (error) {
+      showMessage(message, error.message, "error");
+    } finally {
+      setLoading(button, false);
+    }
   });
 
-  if (!result.success) {
-    throw new Error(result.message);
+  const verifyOtpButton = document.getElementById("verifyOtpBtn");
+
+  if (verifyOtpButton) {
+    verifyOtpButton.addEventListener("click", () => {
+      const email = document.getElementById("email").value.trim();
+      const otp = document.getElementById("otp").value.trim();
+
+      if (!/^\d{6}$/.test(otp)) {
+        showMessage(
+          document.getElementById("message"),
+          "Please enter a valid 6-digit code.",
+          "error"
+        );
+        return;
+      }
+
+      const params = new URLSearchParams({ email, otp });
+
+      window.location.href = `reset-password.html?${params.toString()}`;
+    });
   }
+}
 
-  showMessage(message, result.message, "success");
-
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 1500);
-});
 
 // Dashboard
 
