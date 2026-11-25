@@ -1,6 +1,6 @@
 
-const GAS_URL = process.env.GAS_WEB_APP_URL;
-const API_SECRET = process.env.AUTH_API_SECRET;
+const GAS_URL = "https://script.google.com/macros/s/AKfycbxo280rZL3bDbkCrMD9k76i196af5ytVSg0OiR0I7-jf4BRv6rnNalKCElkQG_DwwsA/exec";
+const API_SECRET = "KAISERkaiser01035637048kaiserKAISER";
 
 const COOKIE_NAME = "ts_session";
 const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
