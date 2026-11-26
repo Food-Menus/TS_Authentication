@@ -5,40 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | TS Authentication</title>
+
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/api.js" defer></script>
   <script src="js/login.js" defer></script>
 </head>
 <body>
+
   <main class="container">
     <section class="card">
+
       <a class="brand" href="index.html">TS<span>.</span></a>
+
       <p class="eyebrow">WELCOME BACK</p>
+
       <h1>Login</h1>
-      <p class="muted">Enter your account details to continue.</p>
+
+      <p class="muted">
+        Enter your account details to continue.
+      </p>
 
       <form id="loginForm">
+
         <label for="email">Email</label>
-        <input id="email" name="email" type="email"
-          placeholder="example@email.com" required>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="example@email.com"
+          autocomplete="email"
+          required
+        >
 
         <label for="password">Password</label>
-        <input id="password" name="password" type="password"
-          placeholder="Enter password" required>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+          required
+        >
 
         <button class="btn primary full" type="submit">
           Login
         </button>
 
-        <p id="message" class="message" aria-live="polite"></p>
+        <p
+          id="message"
+          class="message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
       </form>
 
       <div class="links">
         <a href="forgot-password.html">Forgot Password?</a>
         <a href="register.html">Create Account</a>
       </div>
+
     </section>
   </main>
-  <script src="js/api.js" defer></script>
-<script src="js/login.js" defer></script>
+
 </body>
 </html>
