@@ -6,59 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | TS Authentication</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/auth.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
 </head>
-<body data-page="dashboard">
+<body>
   <main class="container">
-    <section class="card dashboard">
+    <section class="card">
       <a class="brand" href="index.html">TS<span>.</span></a>
-      <p class="eyebrow">ACCOUNT DASHBOARD</p>
-      <h1>Welcome, <span id="username">...</span></h1>
+      <p class="eyebrow">USER DASHBOARD</p>
+      <h1>Welcome, <span id="username">User</span></h1>
       <p class="muted">Your account information.</p>
 
       <div class="profile">
-        <div class="profile-row">
-          <span>Username</span>
-          <strong id="profileUsername">-</strong>
-        </div>
-
-        <div class="profile-row">
-          <span>Email</span>
-          <strong id="profileEmail">-</strong>
-        </div>
-
-        <div class="profile-row">
-          <span>Role</span>
-          <strong id="profileRole">-</strong>
-        </div>
+        <p><strong>Username:</strong> <span id="profileUsername">-</span></p>
+        <p><strong>Email:</strong> <span id="profileEmail">-</span></p>
+        <p><strong>Role:</strong> <span id="profileRole">-</span></p>
       </div>
 
-      <div class="actions vertical">
-        <button id="changePasswordBtn" class="btn secondary full">
+      <p id="dashboardMessage" class="message" aria-live="polite"></p>
+
+      <div class="actions">
+        <a class="btn primary full" href="change-password.html">
           Change Password
-        </button>
-        <button id="logoutBtn" class="btn danger full">
+        </a>
+
+        <button class="btn secondary full" type="button" id="logoutBtn">
           Logout
         </button>
       </div>
-
-      <form id="changePasswordForm" class="hidden">
-        <h2>Change Password</h2>
-
-        <label for="currentPassword">Current Password</label>
-        <input id="currentPassword" type="password" required>
-
-        <label for="newPassword">New Password</label>
-        <input id="newPassword" type="password"
-          minlength="8" maxlength="128" required>
-
-        <button class="btn primary full" type="submit">
-          Update Password
-        </button>
-        <p id="message" class="message"></p>
-      </form>
-
-      <p id="dashboardMessage" class="message"></p>
     </section>
   </main>
 </body>
