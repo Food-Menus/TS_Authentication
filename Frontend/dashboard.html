@@ -5,37 +5,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | TS Authentication</title>
+
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/api.js" defer></script>
   <script src="js/dashboard.js" defer></script>
 </head>
 <body>
+
   <main class="container">
     <section class="card">
+
       <a class="brand" href="index.html">TS<span>.</span></a>
+
       <p class="eyebrow">USER DASHBOARD</p>
-      <h1>Welcome, <span id="username">User</span></h1>
-      <p class="muted">Your account information.</p>
+
+      <h1>
+        Welcome, <span id="username">User</span>
+      </h1>
+
+      <p class="muted">
+        Your account information.
+      </p>
 
       <div class="profile">
-        <p><strong>Username:</strong> <span id="profileUsername">-</span></p>
-        <p><strong>Email:</strong> <span id="profileEmail">-</span></p>
-        <p><strong>Role:</strong> <span id="profileRole">-</span></p>
+
+        <p>
+          <strong>Username:</strong>
+          <span id="profileUsername">-</span>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <span id="profileEmail">-</span>
+        </p>
+
+        <p>
+          <strong>Role:</strong>
+          <span id="profileRole">-</span>
+        </p>
+
       </div>
 
-      <p id="dashboardMessage" class="message" aria-live="polite"></p>
+      <p
+        id="dashboardMessage"
+        class="message"
+        role="status"
+        aria-live="polite"
+      ></p>
 
       <div class="actions">
+
         <a class="btn primary full" href="change-password.html">
           Change Password
         </a>
 
-        <button class="btn secondary full" type="button" id="logoutBtn">
+        <button
+          class="btn secondary full"
+          type="button"
+          id="logoutBtn"
+        >
           Logout
         </button>
+
       </div>
+
     </section>
   </main>
+
 </body>
-  <script src="js/api.js" defer></script>
-<script src="js/dashboard.js" defer></script>
 </html>
