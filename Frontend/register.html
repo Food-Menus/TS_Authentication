@@ -4,23 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register | TS Authentication</title>
+  <title>Create Account | TS Authentication</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/auth.js" defer></script>
+  <script src="js/register.js" defer></script>
 </head>
 <body>
   <main class="container">
     <section class="card">
       <a class="brand" href="index.html">TS<span>.</span></a>
       <p class="eyebrow">GET STARTED</p>
-      <h1>Create your account</h1>
-      <p class="muted">Fill in your information below.</p>
+      <h1>Create Account</h1>
+      <p class="muted">Create your account to get started.</p>
 
       <form id="registerForm">
         <label for="username">Username</label>
         <input id="username" name="username" type="text"
-          minlength="3" maxlength="30" pattern="[A-Za-z0-9_]+"
-          placeholder="Your username" required>
+          placeholder="Enter username" required minlength="3" maxlength="30">
 
         <label for="email">Email</label>
         <input id="email" name="email" type="email"
@@ -28,21 +27,22 @@
 
         <label for="password">Password</label>
         <input id="password" name="password" type="password"
-          minlength="8" maxlength="128"
-          placeholder="At least 8 characters" required>
+          placeholder="Enter password" required minlength="8">
 
-        <label for="adminPassword">Admin Registration Password
-          <span class="optional">(Optional)</span>
-        </label>
+        <label for="adminPassword">Admin Registration Password (Optional)</label>
         <input id="adminPassword" name="adminPassword" type="password"
-          placeholder="Leave empty for a regular account">
+          placeholder="Admin password">
 
-        <button class="btn primary full" type="submit">Create Account</button>
-        <p id="message" class="message"></p>
+        <button class="btn primary full" type="submit">
+          Create Account
+        </button>
+
+        <p id="message" class="message" aria-live="polite"></p>
       </form>
 
       <div class="links">
-        <span>Already have an account? <a href="login.html">Login</a></span>
+        <span>Already have an account?</span>
+        <a href="login.html">Login</a>
       </div>
     </section>
   </main>
